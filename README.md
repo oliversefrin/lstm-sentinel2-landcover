@@ -1,8 +1,9 @@
-![GitHub](https://img.shields.io/github/license/oliversefrin/klingenberg-landcover-classification)
+![GitHub](https://img.shields.io/github/license/oliversefrin/lstm-sentinel2-landcover)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4289079.svg)](https://doi.org/10.5281/zenodo.4289079)
 
-# Code for _TBD_
+# Code for _Deep Learning for Land Cover Change Detection_
 
-This repo contains the code for the pre-processing, model training, and classification evaluation described in the article [_TBD_](#).
+This repo contains the code for the pre-processing, model training, and classification evaluation described in the article [_Deep Learning for Land Cover Change Detection_](#).
 Using a land cover vector ground truth (GT) and freely available Sentinel-2 imagery, we train different neural network classifiers.
 We employ a U-Net based fully convolutional network (FCN) as a base model and present a method of adding a convolutional LSTM cell to make predictions on sequences of satellite images.
 This LSTM approach shows significant improvements on seasonally varying classes such as _grassland_ or _farmland_.
@@ -77,3 +78,17 @@ from metrics import get_metrics_and_cm
 ```
 
 ## Citation
+**Code:**
+
+```
+@misc{sefrin2020code,
+    author = {Sefrin, Oliver and Riese, Felix~M. and Keller, Sina},
+    title = {{Code for Deep Learning for Land Cover Change Detection}},
+    year = {2020},
+    publisher = {Zenodo},
+    doi = {10.5281/zenodo.4289079},
+}
+```
+
+**Paper:**
+
