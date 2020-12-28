@@ -3,11 +3,17 @@
 
 # Code for _Deep Learning for Land Cover Change Detection_
 
-This repo contains the code for the pre-processing, model training, and classification evaluation described in the article [_Deep Learning for Land Cover Change Detection_](#).
-Using a land cover vector ground truth (GT) and freely available Sentinel-2 imagery, we train different neural network classifiers.
-We employ a U-Net based fully convolutional network (FCN) as a base model and present a method of adding a convolutional LSTM cell to make predictions on sequences of satellite images.
-This LSTM approach shows significant improvements on seasonally varying classes such as _grassland_ or _farmland_.
-Other contributions include an approach to mask inconsistent water shorelines based on the NDWI and a method to prevent the exclusion of incomplete image tiles with a specially weighted loss function.
+This repo contains the code for the pre-processing, model training, and
+classification evaluation described in the article
+[_Deep Learning for Land Cover Change Detection_](https://doi.org/10.3390/rs13010078).
+Using a land cover vector ground truth (GT) and freely available Sentinel-2
+imagery, we train different neural network classifiers. We employ a U-Net based
+fully convolutional network (FCN) as a base model and present a method of adding
+a convolutional LSTM cell to make predictions on sequences of satellite images.
+This LSTM approach shows significant improvements on seasonally varying classes
+such as _grassland_ or _farmland_. Other contributions include an approach to
+mask inconsistent water shorelines based on the NDWI and a method to prevent
+the exclusion of incomplete image tiles with a specially weighted loss function.
 
 **License:** [3-Clause BSD license](LICENSE)
 
@@ -49,7 +55,7 @@ All pre-processing functionality is in `src/data_processing/`. The main features
 * rasterization of the GT shapefile (`02_rasterize_shapefile.sh`)
 * creation of training data by merging image and GT (`04_merge_tifs.sh`)
 * creation of prediction data by merging image and AOI GeoTIFF file (`04_merge_tifs.sh`)
-* Tile Splitting to accomodate FCN structure 
+* Tile Splitting to accomodate FCN structure
 
 ## Model Training
 Example models are in `src/models/`, the data generators used for training are in `src/helpers/image_functions.py`.
@@ -78,9 +84,10 @@ from metrics import get_metrics_and_cm
 ```
 
 ## Citation
+
 **Code:**
 
-```
+```tex
 @misc{sefrin2020code,
     author = {Sefrin, Oliver and Riese, Felix~M. and Keller, Sina},
     title = {{Code for Deep Learning for Land Cover Change Detection}},
@@ -92,3 +99,19 @@ from metrics import get_metrics_and_cm
 
 **Paper:**
 
+Sefrin, Oliver; Riese, Felix M.; Keller, Sina. 2021. "Deep Learning for Land
+Cover Change Detection" Remote Sens. 13, no. 1: 78.
+
+```tex
+@article{sefrin2021deep,
+    author = {Sefrin, Oliver and Riese, Felix~M. and Keller, Sina},
+    title = {{Deep Learning for Land Cover Change Detection}},
+    journal = {Remote Sensing},
+    year = {2021},
+    volume = {13},
+    number = {1},
+    article-number = {78},
+    DOI = {10.3390/rs13010078 },
+    publisher={Multidisciplinary Digital Publishing Institute},
+}
+```
